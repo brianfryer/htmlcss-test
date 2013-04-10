@@ -1,0 +1,95 @@
+// IMPORT SASS LIBRARIES (not included in repo)
+
+@import "lib/bourbon/bourbon"; // https://github.com/thoughtbot/bourbon
+@import "lib/neat/neat"; // https://github.com/thoughtbot/bourbon
+@import "lib/normalize";       // https://github.com/necolas/normalize.css
+
+// DEFIN MIXINS
+@mixin floatleft  { float: left; }
+@mixin floatright { float: right; }
+@mixin clearboth  { clear: both; }
+
+
+/* ==========================================================================
+   TOP LEVEL ELEMENTS
+   ========================================================================== */
+
+body {
+  font-family: "Times New Roman", serif;
+}
+
+p {
+  margin: 8px 0;
+}
+
+hr {
+  @include clearboth;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid black;
+}
+
+
+/* ==========================================================================
+   STRUCTURAL ELEMENTS
+   ========================================================================== */
+
+.wrapper {
+  width: 414px;
+  margin: 0 auto;
+}
+
+section {
+  @include clearfix;
+  margin: 30px 0;
+  border: 2px solid black;
+}
+
+header {
+  @include pad(5px 30px 0);
+  font-size: small;
+  text-align: center;
+
+  h1, p {
+    margin: 0;
+    font-weight: normal;
+  }
+}
+
+.column {
+  @include pad(0 6px);
+  margin: 5px;
+  width: 185px;
+}
+
+
+/* ==========================================================================
+   CLASS LEVEL ELEMENTS
+   ========================================================================== */
+
+.left {
+  @include floatleft;
+}
+.right {
+  @include floatright;
+  text-align: right;
+}
+.green {
+  background-color: green;
+}
+.red {
+  background-color: red;
+}
+
+
+/* ==========================================================================
+   "ID" LEVEL ELEMENTS
+   ========================================================================== */
+
+footer {
+  margin: 0 auto;
+
+  dt { margin-left: 10px; }
+  dd { margin: 0; }
+  img { border: 1px dashed black; }
+}
